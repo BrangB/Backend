@@ -36,7 +36,7 @@ module.exports.login = async(req, res, next) => {
     try{
         const result = await UserData.find({Name: name})
         if(result.length === 0){
-            res.json({msg: "Invalid Username", status: false});
+            res.json({msg: "Invalid Username hi", status: false});
         }else{
             const isPasswordValid = await bcrypt.compare(password, result[0].Password)
             const expenseData = await ExpenseData.find({UserID: result[0].Id})
